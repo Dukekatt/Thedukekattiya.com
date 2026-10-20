@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My StretchMinder — Duke Kattiya Chan-urai</title>
+<meta name="description" content="A voice-guided, immersive multimodal experience to help users maintain long-term mobility and stay healthy.">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="nav"><a class="brand" href="index.html">The Duke</a><nav aria-label="Primary"><a href="index.html#projects">Projects</a><a href="index.html#contact">Contact</a></nav></header>
+<main class="case">
+<a class="crumb" href="index.html#projects">← All projects</a>
+<h1>My StretchMinder</h1>
+<p class="lead">A voice-guided, immersive multimodal experience to help users maintain long-term mobility and stay healthy.</p>
+<dl class="facts"><div><dt>Role</dt><dd>Sole UX Designer and Conversation Designer</dd></div><div><dt>Timeline</dt><dd>4 months</dd></div><div><dt>Tools</dt><dd>VoiceFlow, Draw.io, Whimsical</dd></div><div><dt>Disciplines</dt><dd>VUI, Conversation Design, Feature Addition</dd></div></dl>
+<figure><img src="https://static.wixstatic.com/media/bf3d39_2001181c897241c4aa78b63747bda059~mv2.png" alt="Stretch Minder mockup" loading="lazy"></figure>
+<h2>Background</h2>
+<p>Stretching keeps muscles flexible, strong and healthy, but working adults sit around 10.5 hours a day and more than 15% of Americans have health complications from inactivity. Desk workers neglect stretching most.</p><p><strong>Problem:</strong> despite YouTube workouts and exercise apps, daily use stays low. Sessions are long, small screens demand constant visual focus, and users can't tap the screen mid-pose without breaking it.</p><p><strong>Solution:</strong> a hands-free multimodal experience that keeps working professionals engaged and motivated through voice guidance.</p><figure><img src="https://static.wixstatic.com/media/bf3d39_e7b470b90aab4ff1a2fd545e4b9e7628~mv2.png" alt="Design thinking process" loading="lazy"></figure>
+<h2>User research</h2>
+<p>I wanted to understand how spoken and written content affects exercise engagement, and how much people rely on touch commands.</p><h3>Pain points</h3><ul><li>Finding a stretching session takes a long time (average search time over 10 minutes)</li><li>Sessions feel too long for a short work break</li><li>Pose demonstrations are visually rich, which means high cognitive load</li><li>Limited shortcuts create disjointed flows</li></ul><h3>Gain points</h3><ul><li>Short videos and GIFs show a pose quickly</li><li>Saving exercises, playlist-style, reduces selection time</li><li>Mobile access removes barriers at home or at work</li></ul>
+<h2>Competitor and voice-app analysis</h2>
+<p>I reviewed StretchMinder, Start Stretching, and Stretch &amp; Flexibility at Home. Strengths: bite-sized content, video plus audio guidance, freemium models, timers, personalization and reminders. Weakness: no voice commands, and skip/next only by touch.</p><p>I also reviewed four Alexa stretching skills across rating bands (6-Minute Full Body Stretch, Guided Workout: Stretch, Workout Coach, 5 Minute Posture Improvement Stretching).</p><ul><li><strong>Strengths:</strong> defined bot personalities, intent confirmation before launch, short onboarding, simple help and fallbacks</li><li><strong>Weaknesses:</strong> limited conversation and few slots, inconsistent skip/next, resume doesn't return to the earlier position, little exercise variety, non-adjustable durations, weak smart-display support</li></ul><blockquote>Users need a short stretching guide and an easy way to interact without searching or tapping the screen, plus a way to keep the habit going through a daily routine.</blockquote>
+<h2>The opportunity</h2>
+<p>In the existing app, users must leave their pose and touch the screen to command it. Adding voice alongside the mobile interface solves the main pain points and gives users a consistent, coach-like personality that encourages repeat use.</p><pre>User: "Alexa, open Stretch Minder."
+System: "Hi Pam! Nice to have you back. Do you want to stretch upper body or lower body?"
+User: "Upper body, please."</pre><figure><img src="https://static.wixstatic.com/media/bf3d39_3727c9fcb33142a2bd7b929e7b7f3630~mv2.png" alt="Enable sound screen" loading="lazy"></figure>
+<h2>Persona: Kisha Loyde</h2>
+<p>Target users are 35-60 and hold static postures for long stretches.</p><blockquote>I work from home and run my household. I have sensitive joints and don't enjoy heavy workouts, so I want stretching as a daily routine, without fumbling with my phone, and quick.</blockquote><p><strong>Needs:</strong> bite-sized content, reminders, and quick access without searching.</p><p><strong>Main features:</strong> save poses to favorites, a list of all exercises with shortcuts to poses, and quick profile access to set reminders.</p><figure><img src="https://static.wixstatic.com/media/bf3d39_e4c15d978beb478cbfed717cc2aa506a~mv2.png" alt="User flow: open the all-exercises list" loading="lazy"><figcaption>User flow: open the exercise list and choose a pose</figcaption></figure>
+<h2>Conversational repair</h2>
+<p>Some features have limited functionality, such as duration per body part. The system handles out-of-range and no-match input with hints and suggested options:</p><ul><li>"Sorry, we can only spend 6 minutes on a stretch here. How long should I set the time to?"</li><li>"Hmmm, I don't have a specific exercise for that. Which exercise do you want to try? We can do arms, shoulders, hips, or legs."</li></ul><figure><img src="https://static.wixstatic.com/media/bf3d39_8b128373912c4b5b89653a6168b46341~mv2.png" alt="Move duration screen" loading="lazy"></figure>
+<h2>Accessibility</h2>
+<p>A voice-first approach with a visual interface makes navigation more intuitive. Viewing upper-body stretches, saving favorites and skipping poses all work by voice, and audio instruction speeds up access to content.</p><figure><img src="https://static.wixstatic.com/media/bf3d39_1ad67165755a4dd78f82997b92ae3f36~mv2.png" alt="Neck rotation skip screen" loading="lazy"></figure>
+<h2>Personality through voice</h2>
+<p>Stretching is calming, so the voice should be too. I used SSML to adjust tone, speed and emphasis:</p><pre>&lt;prosody rate="medium"&gt;&lt;prosody volume="soft"&gt;
+Welcome to Stretch Minder. &lt;break strength="strong" /&gt;
+I'm your stretch assistant. &lt;break strength="strong" /&gt;
+Seems like this is your first time here. &lt;break strength="strong" /&gt;
+Before we start, what is your name?
+&lt;/prosody&gt;&lt;/prosody&gt;</pre>
+<h2>Prototype</h2>
+<p>I built the conversation flows in VoiceFlow, with barge-in supported at any point and appropriate responses to recognized interruptions.</p>
+<h2>Key learnings</h2>
+<ul><li>Simplify scope. A narrower use case speeds up the first iterations</li><li>Stay on one platform. Adding diverse features shifts focus to tooling instead of scripting</li><li>Cover more prompts for turn-taking and no-match utterances to make the conversation more robust</li></ul><p>The outcome helps users cut through the search process and connect to their stretching habit more easily. A multimodal interface benefits any exercise app for inclusive design, including users with visual impairments or physical handicaps.</p>
+
+<div class="pager"><a href="b4c.html">← B-ForeSea</a><a href="blinki.html">Blinki: One-Stop Coffee Service →</a></div>
+</main>
+<footer>© <span id="y">2026</span> Duke Kattiya Chan-urai</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body></html>
